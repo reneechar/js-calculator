@@ -17,8 +17,12 @@ function calculatorModule() {
    * @return { Number }    current total
    */
     load: function(newTotal){
-     _total = newTotal;
-     return _total;
+     if(typeof newTotal !== 'number') {
+      throw new Error('Did not enter a number to load')
+     } else {
+      _total = newTotal;
+      return _total;
+     }
     },
 
   /**
@@ -34,8 +38,12 @@ function calculatorModule() {
    * @param { Number } x
    */
     add: function(valueToAdd) {
-      _total += valueToAdd;
-      return _total;
+      if(typeof valueToAdd !== 'number') {
+       throw new Error('Did not enter a number to add')
+      } else {
+       _total += valueToAdd;
+       return _total;
+      }
     },
 
   /**
@@ -43,9 +51,13 @@ function calculatorModule() {
    * @param  { Number } x
    */
    subtract: function(valueToSubtract) {
+    if(typeof valueToSubtract !== 'number') {
+      throw new Error('Did not enter a number to subtract')
+    } else {
       _total -= valueToSubtract;
       return _total;
-    },
+    }
+   },
 
 
   /**
@@ -53,18 +65,26 @@ function calculatorModule() {
    * @param  { Number } x
    */
    multiply: function(valueToMultiply) {
+    if(typeof valueToMultiply !== 'number') {
+      throw new Error('Did not enter a number to multiply')
+    } else {
       _total *= valueToMultiply;
       return _total;
-    },
+    }
+   },
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
    divide: function(valueToDivide) {
+    if(typeof valueToDivide !== 'number') {
+      throw new Error('Did not enter a number to divide')
+    } else {
       _total /= valueToDivide;
       return _total;
-    },
+    }
+   },
 
   /**
    * Return the value stored at `memory`
