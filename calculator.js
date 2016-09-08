@@ -33,7 +33,7 @@ function calculatorModule() {
    * Sums the value passed in with `total`
    * @param { Number } x
    */
-    addToTotal: function(valueToAdd) {
+    add: function(valueToAdd) {
       _total += valueToAdd;
       return _total;
     },
@@ -42,7 +42,7 @@ function calculatorModule() {
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
-   subtractFromTotal: function(valueToSubtract) {
+   subtract: function(valueToSubtract) {
       _total -= valueToSubtract;
       return _total;
     },
@@ -52,25 +52,25 @@ function calculatorModule() {
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-   multiplyValue: function(valueToMultiply) {
-      valueToMultiply *= _total;
-      return valueToMultiply;
+   multiply: function(valueToMultiply) {
+      _total *= valueToMultiply;
+      return _total;
     },
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-   divideValue: function(valueToDivide) {
-      valueToDivide /= total;
-      return valueToDivide;
+   divide: function(valueToDivide) {
+      _total /= valueToDivide;
+      return _total;
     },
 
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
-    getMemory: function() {
+    recallMemory: function() {
       return _memory;
     },
 
@@ -78,7 +78,7 @@ function calculatorModule() {
   /**
    * Stores the value of `total` to `memory`
    */
-    storeTotalInMemory: function(theTotal) {
+    saveMemory: function(theTotal) {
       _memory = _total;
       return _memory;
     },
@@ -87,7 +87,7 @@ function calculatorModule() {
    * Clear the value stored at `memory`
    */
     clearMemory: function() {
-      _memory = null;
+      _memory = 0;
       return _memory;
     }
   /**
